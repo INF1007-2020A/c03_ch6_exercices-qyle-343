@@ -4,10 +4,16 @@
 
 def order(values: list = None) -> bool:
     if values is None:
+        ordre = True
         # TODO: Demander les valeurs ici
-        pass
-
-    return False
+        liste_valeurs = list(input('Veuillez entrer 10 valeurs sans espace: ')) # On voulait seulement un seul type :(
+        for index, element in enumerate(liste_valeurs):
+            if index + 1 < len(liste_valeurs):
+                if element > liste_valeurs[index + 1]:
+                    ordre = False
+            else:
+                continue
+    return ordre
 
 
 def anagrams(words: list = None) -> bool:
@@ -24,7 +30,9 @@ def contains_doubles(items: list) -> bool:
 
 def best_grades(student_grades: dict) -> dict:
     # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
-    return {}
+    for nom in grades:
+        grades[nom]
+    return {name: result}
 
 
 def histogram(sentence: str) -> tuple:
