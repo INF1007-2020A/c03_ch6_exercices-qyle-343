@@ -1,8 +1,20 @@
 test_anagram (__main__.TestExercice) ... FAIL
-test_doubles (__main__.TestExercice) ... FAIL
+test_doubles (__main__.TestExercice) ... ERROR
 test_grades (__main__.TestExercice) ... ERROR
 test_histogram (__main__.TestExercice) ... FAIL
 test_order (__main__.TestExercice) ... ERROR
+
+======================================================================
+ERROR: test_doubles (__main__.TestExercice)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_exercice.py", line 49, in test_doubles
+    output = [exercice.contains_doubles(v) for v in values]
+  File "test_exercice.py", line 49, in <listcomp>
+    output = [exercice.contains_doubles(v) for v in values]
+  File "/home/runner/work/c03_ch6_exercices-qyle-343/c03_ch6_exercices-qyle-343/exercice.py", line 28, in contains_doubles
+    my_set = set(my_list)
+NameError: name 'my_list' is not defined
 
 ======================================================================
 ERROR: test_grades (__main__.TestExercice)
@@ -12,7 +24,7 @@ Traceback (most recent call last):
     output = [exercice.best_grades(v) for v in values]
   File "test_exercice.py", line 63, in <listcomp>
     output = [exercice.best_grades(v) for v in values]
-  File "/home/runner/work/c03_ch6_exercices-qyle-343/c03_ch6_exercices-qyle-343/exercice.py", line 33, in best_grades
+  File "/home/runner/work/c03_ch6_exercices-qyle-343/c03_ch6_exercices-qyle-343/exercice.py", line 34, in best_grades
     for nom in grades:
 NameError: name 'grades' is not defined
 
@@ -44,21 +56,6 @@ True
 + [True, False] : Erreur dans la vérification de l'anagramme
 
 ======================================================================
-FAIL: test_doubles (__main__.TestExercice)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "test_exercice.py", line 55, in test_doubles
-    'Erreur dans les doublons'
-AssertionError: Lists differ: [False, False] != [False, True]
-
-First differing element 1:
-False
-True
-
-- [False, False]
-+ [False, True] : Erreur dans les doublons
-
-======================================================================
 FAIL: test_histogram (__main__.TestExercice)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
@@ -69,4 +66,4 @@ AssertionError: [({}, []), ({}, [])] is not an instance of <class 'dict'> : Firs
 ----------------------------------------------------------------------
 Ran 5 tests in 0.001s
 
-FAILED (failures=3, errors=2)
+FAILED (failures=2, errors=3)
